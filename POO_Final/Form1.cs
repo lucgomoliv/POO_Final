@@ -16,5 +16,11 @@ namespace POO_Final
         {
             InitializeComponent();
         }
+
+        private void Button1_Click(object sender, EventArgs e)
+        {
+            Form1 novoForms = new Form1();
+            novoForms.Show();
+        }
     }
 }

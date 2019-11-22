@@ -1,0 +1,16 @@
+CLIENTES - CPF;NOME;TIPO
+10000227;Alan Alves Gabriel;1
+
+Tipo: 0 (qualificado), 1 (regular), 2 (premium)
+
+==========
+CONTAS - NÚMERO;TIPO;CLIENTE;SALDOINICIAL
+00103;3;10238532;171,00
+
+Tipo: 1 (poupança), 2 (investimento), 3 (corrente)
+
+==========
+OPERAÇÕES - CONTA;TIPO;VALOR;DATA
+8428;1;3116;02/07/2019
+
+Tipo: 1 (saque), 2 (depósito), 3 (rendimento)

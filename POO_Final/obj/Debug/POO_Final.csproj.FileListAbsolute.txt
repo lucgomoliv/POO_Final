@@ -1,0 +1,5 @@
+C:\Users\luqui\Google Drive\Projetos\POO_Final\POO_Final\obj\Debug\POO_Final.csprojAssemblyReference.cache
+C:\Users\luqui\Google Drive\Projetos\POO_Final\POO_Final\obj\Debug\POO_Final.Form1.resources
+C:\Users\luqui\Google Drive\Projetos\POO_Final\POO_Final\obj\Debug\POO_Final.Properties.Resources.resources
+C:\Users\luqui\Google Drive\Projetos\POO_Final\POO_Final\obj\Debug\POO_Final.csproj.GenerateResource.cache
+C:\Users\luqui\Google Drive\Projetos\POO_Final\POO_Final\obj\Debug\POO_Final.csproj.CoreCompileInputs.cache

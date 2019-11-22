@@ -8,50 +8,43 @@ namespace ConsoleApp2
 {
     class Qualificado : Cliente
     {
-        private double desconto;
-
-        public Qualificado(string n, string cp, Conta[]c,double desconto) : base(n,cp,c)
+        private static double desconto = 5;
+        //Construtor 1
+        public Qualificado(string nome, string cpf, Conta[] conta) : base(nome, cpf, conta)
         {
-            if(desconto>0)
-            {
-                this.desconto = desconto;
-            }
+           
         }
-        public override double rendimento(int numConta)
+        //Construtor 2
+        public Qualificado(string nome, string cpf, Conta conta) : base(nome, cpf, conta)
         {
-            double rendimento;
 
-            for (int i = 0; i < this.contas.Length; i++)
-            {
-                if (contas[i].GetNumero() == numConta)
-                {
-                    rendimento = this.contas[i].rendimento();
-                    return rendimento;
-                }
-            }
-
-            return 0;
         }
-
+        /// <summary>
+        /// Cáculo da Tarifa da conta com base no cliente 
+        /// </summary>
+        /// <param Número da conta="numConta"></param>
+        /// <returns>(valor>0) = tarifa (valor =-1) = não achou a conta</returns>
         public override double tarifa(int numConta)
         {
             double aux = 0;
             double totaltarifa = 0;
-            if (numConta > 0)
-            {
-                aux = this.contas[numConta].tarifa();
-                totaltarifa = aux - desconto;
-            }
+            //Busca a conta que o cliente informou 
             for (int i = 0; i < this.contas.Length; i++)
             {
                 if (contas[i].GetNumero() == numConta)
                 {
+                    //(Valor da tarifa da conta) - (desconto do tipo do cliente)
                     aux = this.contas[i].tarifa();
                     totaltarifa = aux - desconto;
+                    //Caso o desconto for maior que a tarifa
+                    if (totaltarifa < 0)
+                    {
+                        totaltarifa = 0;
+                    }
                     return totaltarifa;
                 }
             }
-            return 0;
+            return -1;
         }
 
     }

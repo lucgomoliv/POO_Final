@@ -12,14 +12,21 @@ namespace ConsoleApp2
         public string cpf;
         protected Conta[] contas;
 
-        public Cliente(string n, string cp, Conta[]c)
+        public Cliente(string nome, string cpf, Conta conta)
         {
-            n = nome;
-            cpf = cp;
-            if(c!=null)
+            this.nome = nome;
+            this.cpf = cpf;
+            AddConta(conta);
+        }
+        public Cliente(string nome, string cpf, Conta[] contas)
+        {
+            this.nome = nome;
+            this.cpf = cpf;
+            if(contas!=null)
             {
-                contas = c;
+                this.contas = contas;
             }
+            
         }
 
         public string extrato(int numConta)
@@ -35,6 +42,14 @@ namespace ConsoleApp2
                 }
             }
             return null;
+        }
+
+        private void AddConta(Conta conta)
+        {
+            Conta[] aux = new Conta[contas.Length + 1];
+            contas.CopyTo(aux, 0);
+            aux[aux.Length - 1] = conta;
+            contas = aux;
         }
 
         public abstract double tarifa(int numConta);

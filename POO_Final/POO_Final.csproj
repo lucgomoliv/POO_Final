@@ -94,5 +94,11 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="Dados\POOClientes.txt" />
+    <Content Include="Dados\POOContas.txt" />
+    <Content Include="Dados\POOoperacoes.txt" />
+    <Content Include="Dados\POO_Descricao_Banco.txt" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

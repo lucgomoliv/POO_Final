@@ -10,7 +10,7 @@ namespace ConsoleApp2
     {
         private double desconto;
 
-        public Qualificado(string n, string cp, Conta[]c,double desconto) :base(n,cp,c)
+        public Qualificado(string n, string cp, Conta[]c,double desconto) : base(n,cp,c)
         {
             if(desconto>0)
             {

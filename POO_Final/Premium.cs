@@ -10,7 +10,7 @@ namespace ConsoleApp2
     {
         private double desconto;
 
-        public Premium(string n, string cp, Conta[] c, double desconto) : base(n, cp, c)
+        public Premium(string nome, string cpf, Conta[] conta, double desconto) : base(nome, cpf, conta)
         {
             if (desconto > 0)
             {

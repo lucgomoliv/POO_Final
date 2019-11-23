@@ -8,3 +8,8 @@ C:\Users\User\Source\Repos\POO_Final\POO_Final\obj\Debug\POO_Final.Form1.resourc
 C:\Users\User\Source\Repos\POO_Final\POO_Final\obj\Debug\POO_Final.Properties.Resources.resources
 C:\Users\User\Source\Repos\POO_Final\POO_Final\obj\Debug\POO_Final.csproj.GenerateResource.cache
 C:\Users\User\Source\Repos\POO_Final\POO_Final\obj\Debug\POO_Final.csproj.CoreCompileInputs.cache
+C:\Users\User\source\repos\POO_Final\POO_Final\bin\Debug\POO_Final.exe.config
+C:\Users\User\source\repos\POO_Final\POO_Final\bin\Debug\POO_Final.exe
+C:\Users\User\source\repos\POO_Final\POO_Final\bin\Debug\POO_Final.pdb
+C:\Users\User\source\repos\POO_Final\POO_Final\obj\Debug\POO_Final.exe
+C:\Users\User\source\repos\POO_Final\POO_Final\obj\Debug\POO_Final.pdb

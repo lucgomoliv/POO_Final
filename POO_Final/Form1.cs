@@ -26,9 +26,10 @@ namespace POO_Final
         public Cliente[] ImportarCliente()
         {
             
-            string diretoriocliente = @"‪D:\Desktop\POOClientes.txt";
+            string diretoriocliente = @"C:\Users\Public\Desktop\POOClientes.txt";
             string linha = null;
             string[] vetorcliente = new string[3];
+  
             StreamReader arquivo = new StreamReader(diretoriocliente);
             Cliente[] vetorc = new Cliente[0];
 
@@ -69,7 +70,7 @@ namespace POO_Final
         }
         public Conta[] ImportarConta(Cliente[]clientes)
         {
-            string diretorioconta = @"‪D:\Desktop\POOContas.txt";
+            string diretorioconta = @"‪C:\Users\Public\Desktop\POOContas.txt";
             string linha = null;
             string[] vetorconta = new string[4];
             StreamReader arquivo = new StreamReader(diretorioconta);
@@ -140,7 +141,7 @@ namespace POO_Final
         }
         public void ImportarOperacao(Conta[]contas)
         {
-            string diretoriooperacao = @"‪D:\Desktop\POOoperacoes.txt";
+            string diretoriooperacao = @"C:\Users\Public\Desktop\POOoperacoes.txt";
             
             string linha = null;
             string[] vetoroperacoes = new string[4];

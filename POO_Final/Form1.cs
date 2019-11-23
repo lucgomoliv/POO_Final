@@ -44,7 +44,7 @@ namespace POO_Final
                 while ((linha = arquivo.ReadLine()) != null)
                 {
                     vetorcliente = linha.Split(';');
-                    if(Convert.ToInt32(vetorcliente[2])==1)
+                    if(Convert.ToInt32(vetorcliente[2]) == 1)
                     {
                         Cliente c = new Regular(vetorcliente[1], vetorcliente[0]);
                         Cliente[] aux = new Cliente[vetorc.Length + 1]; //Cria um vetor com mais uma posição referente ao vetor principal

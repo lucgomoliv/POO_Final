@@ -15,6 +15,25 @@ namespace POO_Final
         private double saldo = 0;
         private ISacavel categoria;
 
+        public int GetNumero()
+        {
+            return numero;
+        }
+
+        public ISacavel GetCategoria()
+        {
+            return categoria;
+        }
+
+        public double GetSaldo()
+        {
+            return saldo;
+        }
+
+        public void SetSaldo(double saldo)
+        {
+            this.saldo = saldo;
+        }
 
         //Construtor 1
         public Conta(int categoria, double saldo, int numero)
@@ -75,20 +94,7 @@ namespace POO_Final
                 saldo = 0;
             }
         }
-        public ISacavel GetCategoria()
-        {
-            return categoria;
-        }
-
-        public double GetSaldo()
-        {
-            return saldo;
-        }
-
-        public void SetSaldo(double saldo)
-        {
-            this.saldo = saldo;
-        }
+        
         /// <summary>
         /// Adiciona uma operacao para o vetor de operacoes da conta
         /// </summary>
@@ -126,7 +132,6 @@ namespace POO_Final
                 }
             }
             return true;
-            
         }
 
         /// <summary>
@@ -152,7 +157,6 @@ namespace POO_Final
                     this.categoria = new ContaPoupanca(saldo);
                     break;
             }
-
         }
 
         /// <summary>
@@ -172,26 +176,31 @@ namespace POO_Final
         public bool saque(double valor)
         {
             Operacao aux = new Saque(valor, DateTime.UtcNow);
-            AddOperacao(aux);
-            return aux.atualizar(this);
+            if (aux.atualizar(this))
+            {
+                AddOperacao(aux);
+                return true;
+            }
+            return false;
         }
+
         public bool deposito(double valor)
         {
-            
+            Operacao aux = new Deposito(valor, DateTime.UtcNow);
+            if (aux.atualizar(this))
+            {
+                AddOperacao(aux);
+                return true;
+            }
+            return false;
         }
 
         public double rendimento()
         {
-            try
-            {
-                IRentavel aux = (IRentavel)categoria;
-                saldo = aux.calcRendimento(saldo);
-                return saldo;
-            }
-            catch (InvalidCastException e)
-            {
-                return saldo;
-            }
+            double saldoAnterior = saldo;
+            Operacao aux = new Rendimento(0, DateTime.UtcNow);
+            if (aux.atualizar(this)) AddOperacao(aux);
+            return saldo - saldoAnterior;
         }
         
         public double tarifa()
@@ -206,11 +215,5 @@ namespace POO_Final
                 return 0;
             }
         }
-
-        public int GetNumero()
-        {
-            return numero;
-        }
-        public 
     }
 }

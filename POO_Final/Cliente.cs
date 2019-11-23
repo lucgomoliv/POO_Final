@@ -8,7 +8,6 @@ namespace ConsoleApp2
 {
     abstract class Cliente
     {
-        
         public string nome;
         public string cpf;
         protected Conta[] contas;

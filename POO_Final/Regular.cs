@@ -8,7 +8,7 @@ namespace ConsoleApp2
 {
     class Regular : Cliente
     {
-        private double desconto=3;
+        private double desconto = 3;
         //Construtor 1
         public Regular(string nome, string cpf, Conta[] conta) : base(nome, cpf, conta) { }
 
@@ -42,6 +42,5 @@ namespace ConsoleApp2
             }
             return -1;
         }
-
     }
 }

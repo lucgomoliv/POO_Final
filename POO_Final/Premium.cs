@@ -9,7 +9,7 @@ namespace ConsoleApp2
     class Premium : Cliente
     {
         //Todas as contas tem o mesmo desconto
-        private static double desconto=10;
+        private static double desconto = 10;
 
         //Construtor 1
         public Premium(string nome, string cpf, Conta[] conta) : base(nome, cpf, conta) { }

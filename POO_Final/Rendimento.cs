@@ -12,7 +12,7 @@ namespace ConsoleApp2
         {
             if (data.Day == 1)
             {
-                conta.rendimento();
+                conta();
             }
             else return false;
         }

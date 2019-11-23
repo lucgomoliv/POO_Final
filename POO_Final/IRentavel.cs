@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ConsoleApp2
 {
-    interface IRentavel
+    public interface IRentavel
     {
         double calcRendimento(double valor);
     }

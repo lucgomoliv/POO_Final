@@ -15,6 +15,7 @@ namespace ConsoleApp2
         private double saldo = 0;
         private ISacavel categoria;
         
+        
         //Construtor 1
         public Conta(int categoria, double saldo, int numero)
         {
@@ -160,7 +161,16 @@ namespace ConsoleApp2
 
         public double rendimento()
         {
-            
+            try
+            {
+                IRentavel aux = (IRentavel)categoria;
+                saldo = aux.calcRendimento(saldo);
+                return saldo;
+            }
+            catch (InvalidCastException e)
+            {
+                return saldo;
+            }
         }
 
         public double tarifa()
@@ -182,6 +192,7 @@ namespace ConsoleApp2
             }
             return false;
         }
+
         public bool SetSaldoDeposito(double valor)
         {
             if (valor > 0)

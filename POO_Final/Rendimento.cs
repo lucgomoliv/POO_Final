@@ -19,9 +19,13 @@ namespace POO_Final
         {
             try
             {
-                IRentavel aux = (IRentavel)conta.GetCategoria();
-                conta.SetSaldo(aux.calcRendimento(conta.GetSaldo()) + conta.GetSaldo());
-                return true;
+                if (data.Day == 1)
+                {
+                    IRentavel aux = (IRentavel)conta.GetCategoria();
+                    conta.SetSaldo(aux.calcRendimento(conta.GetSaldo()) + conta.GetSaldo());
+                    return true;
+                }
+                else return false;
             }
             catch (InvalidCastException e)
             {

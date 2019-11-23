@@ -8,7 +8,7 @@ namespace POO_Final
 {
     public class Conta
     {
-        private static int[] numerodascontasBD;
+        private static int[] numerodascontasBD = new int[0];
         private static int proximaconta = 0;
         private int numero;
         private Operacao[] operacoes = new Operacao[1];
@@ -78,7 +78,6 @@ namespace POO_Final
             numero = proximaconta;
             if (AddConta(numero))
             {
-
                 proximaconta++;
             }
             Operacao[] operacoes = new Operacao[0];
@@ -136,19 +135,14 @@ namespace POO_Final
             //Validação se houver conta repitida
             foreach(int i in numerodascontasBD)
             {
-                if(i==numConta)
-                {
-                    return false;
-                }
-                else
-                {
-                    int[] aux = new int[numerodascontasBD.Length + 1]; //Cria um vetor com mais uma posição referente ao vetor principal
-                    numerodascontasBD.CopyTo(aux, 0); //Copia os dados do vetor principal pro vetor auxiliar
-                    aux[aux.Length - 1] = numConta; //O vetor auxiliar recebe o novo numero no ultimo índice
-                    numerodascontasBD = aux; //O vetor principal recebe o vetor auxiliar
-                    
-                }
+                if(i == numConta) return false;
             }
+
+            int[] aux = new int[numerodascontasBD.Length + 1]; //Cria um vetor com mais uma posição referente ao vetor principal
+            numerodascontasBD.CopyTo(aux, 0); //Copia os dados do vetor principal pro vetor auxiliar
+            aux[aux.Length - 1] = numConta; //O vetor auxiliar recebe o novo numero no ultimo índice
+            numerodascontasBD = aux; //O vetor principal recebe o vetor auxiliar
+
             return true;
         }
 
@@ -161,7 +155,7 @@ namespace POO_Final
             switch (categoria)
             {
                 case 1:
-                    this.categoria = new ContaCorrente(saldo);
+                    this.categoria = new ContaPoupanca(saldo);
                     break;
 
                 case 2:
@@ -169,7 +163,7 @@ namespace POO_Final
                     break;
 
                 case 3:
-                    this.categoria = new ContaPoupanca(saldo);
+                    this.categoria = new ContaCorrente(saldo);
                     break;
                 default:
                     this.categoria = new ContaPoupanca(saldo);

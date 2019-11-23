@@ -17,3 +17,5 @@ C:\Users\User\Source\Repos\POO_Final\POO_Final\bin\Debug\POO_Final.exe
 C:\Users\User\Source\Repos\POO_Final\POO_Final\bin\Debug\POO_Final.pdb
 C:\Users\User\Source\Repos\POO_Final\POO_Final\obj\Debug\POO_Final.exe
 C:\Users\User\Source\Repos\POO_Final\POO_Final\obj\Debug\POO_Final.pdb
+C:\Users\luqui\Google Drive\Projetos\POO_Final\POO_Final\obj\Debug\POO_Final.Form2.resources
+C:\Users\luqui\Google Drive\Projetos\POO_Final\POO_Final\obj\Debug\POO_Final.Form3.resources

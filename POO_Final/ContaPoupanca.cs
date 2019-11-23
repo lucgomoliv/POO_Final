@@ -23,7 +23,7 @@ namespace POO_Final
         /// <returns>(true) = Saque Concluido (false) = Valor do Saque acima do Saldo da conta ou Valor do Saque inválido</returns>
         public bool sacar(double valor)
         {
-            if(saldo - valor > 0 && valor > 0)
+            if(saldo - valor >= 0 && valor > 0)
             {
                 saldo -= valor;
                 return true;

@@ -14,6 +14,8 @@ namespace POO_Final
     public partial class Form1 : Form
     {
         StreamReader arquivo;
+        public Cliente[] vetorclientes;
+        public Conta[] vetorcontas;
         public Form1()
         {
             InitializeComponent();
@@ -207,9 +209,7 @@ namespace POO_Final
 
         private void Impot_Client_Click(object sender, EventArgs e)
         {
-            Cliente[] vetorclientes;
             vetorclientes = ImportarCliente();
-            Conta[] vetorcontas;
             vetorcontas = ImportarConta(vetorclientes);
             ImportarOperacao(vetorcontas);
             foreach (Cliente cliente in vetorclientes)
@@ -220,7 +220,6 @@ namespace POO_Final
             {
                 listBoxCO.Items.Add(conta.ToString());
             }
-
         }
 
         private void listBoxC_SelectedIndexChanged(object sender, EventArgs e)
@@ -235,7 +234,27 @@ namespace POO_Final
 
         private void VerificarRend_Click(object sender, EventArgs e)
         {
-
+            try
+            {
+                for (int i = 0; i < vetorcontas.Length; i++)
+                {
+                    if (vetorcontas[i].GetNumero() == int.Parse(textBoxNumConta.Text))
+                    {
+                        textBoxValor.Text = vetorcontas[i].rendimento().ToString();
+                        MessageBox.Show("A conta rendeu " + vetorcontas[i].rendimento());
+                        AtualizarLista();
+                        break;
+                    }
+                }
+            }
+            catch(FormatException x)
+            {
+                MessageBox.Show("Dados invalidos, por favor insira os dados novamente e repita a ação!");
+            }
+            catch (NullReferenceException x)
+            {
+                MessageBox.Show("Dados invalidos, por favor insira os dados novamente e repita a ação!");
+            }
         }
 
         private void textBoxRend_TextChanged(object sender, EventArgs e)
@@ -243,5 +262,110 @@ namespace POO_Final
 
         }
 
+        private void buttonAddCliente_Click(object sender, EventArgs e)
+        {
+            Form2 a = new Form2(this);
+            Hide();
+            a.Show();
+        }
+
+        private void buttonAddConta_Click(object sender, EventArgs e)
+        {
+            Form3 a = new Form3(this);
+            Hide();
+            a.Show();
+        }
+
+        public void AtualizarLista()
+        {
+            listBoxC.Items.Clear();
+            listBoxCO.Items.Clear();
+            if(vetorclientes != null)
+            foreach (Cliente cliente in vetorclientes)
+            {
+                listBoxC.Items.Add(cliente.ToString());
+            }
+            if(vetorcontas != null)
+            foreach (Conta conta in vetorcontas)
+            {
+                listBoxCO.Items.Add(conta.ToString());
+            }
+        }
+
+        private void buttonDep_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                double valor = double.Parse(textBoxValor.Text);
+                for (int i = 0; i < vetorcontas.Length; i++)
+                {
+                    if (vetorcontas[i].GetNumero() == int.Parse(textBoxNumConta.Text))
+                    {
+                        textBoxValor.Text = vetorcontas[i].deposito(valor).ToString();
+                        MessageBox.Show("Foi depositado " + valor + " reais na conta de numero '" + vetorcontas[i].GetNumero());
+                        AtualizarLista();
+                        break;
+                    }
+                }
+            }
+            catch(FormatException j)
+            {
+                MessageBox.Show("Dados invalidos, por favor insira os dados novamente e repita a ação!");
+            }
+            catch (NullReferenceException x)
+            {
+                MessageBox.Show("Dados invalidos, por favor insira os dados novamente e repita a ação!");
+            }
+        }
+
+        private void buttonSacar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                double valor = double.Parse(textBoxValor.Text);
+                for (int i = 0; i < vetorcontas.Length; i++)
+                {
+                    if (vetorcontas[i].GetNumero() == int.Parse(textBoxNumConta.Text))
+                    {
+                        textBoxValor.Text = vetorcontas[i].saque(valor).ToString();
+                        MessageBox.Show("Foi sacado " + valor + " reais da conta de numero '" + vetorcontas[i].GetNumero());
+                        AtualizarLista();
+                        break;
+                    }
+                }
+            }
+            catch (FormatException j)
+            {
+                MessageBox.Show("Dados invalidos, por favor insira os dados novamente e repita a ação!");
+            }
+            catch (NullReferenceException x)
+            {
+                MessageBox.Show("Dados invalidos, por favor insira os dados novamente e repita a ação!");
+            }
+        }
+
+        private void buttonExtrato_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                for(int i = 0; i < vetorcontas.Length; i++)
+                {
+                    if (vetorcontas[i].GetNumero() == int.Parse(textBoxNumConta.Text))
+                    {
+                        MessageBox.Show(vetorcontas[i].extrato());
+                        break;
+                    }
+                }
+               
+            }
+            catch (FormatException j)
+            {
+                MessageBox.Show("Dados invalidos, por favor insira os dados novamente e repita a ação!");
+            }
+            catch (NullReferenceException x)
+            {
+                MessageBox.Show("Dados invalidos, por favor insira os dados novamente e repita a ação!");
+            }
+        }
     }
 }

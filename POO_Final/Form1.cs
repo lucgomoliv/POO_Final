@@ -232,5 +232,16 @@ namespace POO_Final
         {
 
         }
+
+        private void VerificarRend_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBoxRend_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
     }
 }

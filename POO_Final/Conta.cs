@@ -15,26 +15,11 @@ namespace POO_Final
         private double saldo = 0;
         private ISacavel categoria;
 
-        public ISacavel GetCategoria()
-        {
-            return categoria;
-        }
-
-        public double GetSaldo()
-        {
-            return saldo;
-        }
-
-        public void SetSaldo(double saldo)
-        {
-            this.saldo = saldo;
-        }
-
 
         //Construtor 1
         public Conta(int categoria, double saldo, int numero)
         {
-            if(AddConta(numero))
+            if (AddConta(numero))
             {
                 numero = proximaconta;
                 proximaconta++;
@@ -57,11 +42,11 @@ namespace POO_Final
             numero = proximaconta;
             if (AddConta(numero))
             {
-               
+
                 proximaconta++;
-            }          
+            }
             Operacao[] operacoes = new Operacao[0];
-            if(saldo > 0)
+            if (saldo > 0)
             {
                 this.saldo = saldo;
             }
@@ -72,12 +57,44 @@ namespace POO_Final
             ImplementarCategoria(categoria);
         }
 
+        public Conta(ISacavel categoria, double saldo, int numero)
+        {
+            this.numero = numero;
+            Operacao[] operacoes = new Operacao[0];
+            if (categoria != null)
+            {
+                this.categoria = categoria;
+            }
+
+            if (saldo > 0)
+            {
+                this.saldo = saldo;
+            }
+            else
+            {
+                saldo = 0;
+            }
+        }
+        public ISacavel GetCategoria()
+        {
+            return categoria;
+        }
+
+        public double GetSaldo()
+        {
+            return saldo;
+        }
+
+        public void SetSaldo(double saldo)
+        {
+            this.saldo = saldo;
+        }
         /// <summary>
         /// Adiciona uma operacao para o vetor de operacoes da conta
         /// </summary>
         /// <param Operacao="Operacao"></param>
         /// <returns></returns>
-        private void AddOperacao(Operacao operacao)
+        public void AddOperacao(Operacao operacao)
         {
             Operacao[] aux = new Operacao[operacoes.Length + 1]; //Cria um vetor com mais uma posição referente ao vetor principal
             operacoes.CopyTo(aux, 0); //Copia os dados do vetor principal pro vetor auxiliar
@@ -194,5 +211,6 @@ namespace POO_Final
         {
             return numero;
         }
+        public 
     }
 }

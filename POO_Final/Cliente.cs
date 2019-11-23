@@ -68,7 +68,7 @@ namespace POO_Final
         }
 
         public abstract double tarifa(int numConta);
-
+        
         /// <summary>
         /// Retorna o rendimento da conta especificada
         /// </summary>
@@ -85,6 +85,10 @@ namespace POO_Final
                 }
             }
             return -1;
+        }
+        public string GetCpf()
+        {
+            return cpf;
         }
     }
 }

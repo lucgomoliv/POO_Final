@@ -9,7 +9,7 @@ namespace POO_Final
     class ContaCorrente : ISacavel, ITarifavel
     {
         private double saldo;
-        private double limitesaque;
+        private double limiteSaque = -1000;
         private static double tarifa = 5;
 
         //Construtor
@@ -17,7 +17,7 @@ namespace POO_Final
         {
             this.saldo = saldo;
         }
-        
+
 
         /// <summary>
         /// Retorna a tarifa da Conta
@@ -50,12 +50,22 @@ namespace POO_Final
         /// <returns>(true) = Saque Concluido (false) = Valor do Saque inválido</returns>
         public bool sacar(double valor)
         {
-            if (valor > 0)
+            if (valor > 0 && saldo > limiteSaque)
             {
                 saldo -= valor;
                 return true;
             }
             else return false;
         }
+
+        /// <summary>
+        /// Retorna os Dados da Conta como String
+        /// </summary>
+        /// <returns>Dados da Conta</returns>
+        public override string ToString()
+        {
+            return " Limite Saque: " + limiteSaque.ToString() + " Tipo: Conta Corrente" + " Tarifa: " + tarifa.ToString();
+        }
+
     }
 }

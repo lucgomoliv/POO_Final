@@ -11,7 +11,7 @@ namespace POO_Final
         private static int[] numerodascontasBD;
         private static int proximaconta = 0;
         private int numero;
-        private Operacao[] operacoes;
+        private Operacao[] operacoes = new Operacao[1];
         private double saldo = 0;
         private ISacavel categoria;
 
@@ -93,6 +93,7 @@ namespace POO_Final
             ImplementarCategoria(categoria);
         }
 
+        //Construtor 3
         public Conta(ISacavel categoria, double saldo, int numero)
         {
             this.numero = numero;
@@ -249,6 +250,19 @@ namespace POO_Final
             {
                 return 0;
             }
+        }
+
+        /// <summary>
+        /// Retorna os Dados da Conta como String
+        /// </summary>
+        /// <returns>Dados da Conta</returns>
+        public override string ToString()
+        {
+            StringBuilder aux = new StringBuilder();
+            aux.AppendLine("Número da conta: " + numero.ToString() + " Número de operaçoes: " + operacoes.Length + " Saldo: " + saldo);
+            aux.AppendLine(categoria.ToString());
+            return aux.ToString();
+       
         }
     }
 }

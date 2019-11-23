@@ -10,7 +10,7 @@ namespace POO_Final
     {
         public string nome;
         public string cpf;
-        protected Conta[] contas;
+        protected Conta[] contas=new Conta[1];
 
         //Construtor 1 
         public Cliente(string nome, string cpf, Conta conta)
@@ -94,6 +94,14 @@ namespace POO_Final
         public string GetCpf()
         {
             return cpf;
+        }
+
+        public override string ToString()
+        {
+            StringBuilder aux = new StringBuilder();
+
+            aux.AppendLine("Nome: " + nome + " CPF: " + cpf + " Número de contas: " + contas.Length.ToString());
+            return aux.ToString();
         }
     }
 }

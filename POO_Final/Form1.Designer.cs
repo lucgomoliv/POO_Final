@@ -28,34 +28,57 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.ImportClientes = new System.Windows.Forms.Button();
+            this.Impot_Client = new System.Windows.Forms.Button();
+            this.listBoxC = new System.Windows.Forms.ListBox();
+            this.listBoxCO = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
             // 
-            // ImportClientes
+            // Impot_Client
             // 
-            this.ImportClientes.Location = new System.Drawing.Point(867, 391);
-            this.ImportClientes.Name = "ImportClientes";
-            this.ImportClientes.Size = new System.Drawing.Size(109, 23);
-            this.ImportClientes.TabIndex = 1;
-            this.ImportClientes.Text = "Importar Arquivo";
-            this.ImportClientes.UseVisualStyleBackColor = true;
-            this.ImportClientes.Click += new System.EventHandler(this.ImportClientes_Click);
+            this.Impot_Client.Location = new System.Drawing.Point(904, 376);
+            this.Impot_Client.Name = "Impot_Client";
+            this.Impot_Client.Size = new System.Drawing.Size(214, 23);
+            this.Impot_Client.TabIndex = 0;
+            this.Impot_Client.Text = "Importar Clientes";
+            this.Impot_Client.UseVisualStyleBackColor = true;
+            this.Impot_Client.Click += new System.EventHandler(this.Impot_Client_Click);
+            // 
+            // listBoxC
+            // 
+            this.listBoxC.FormattingEnabled = true;
+            this.listBoxC.Location = new System.Drawing.Point(25, 12);
+            this.listBoxC.Name = "listBoxC";
+            this.listBoxC.Size = new System.Drawing.Size(1200, 69);
+            this.listBoxC.TabIndex = 1;
+            this.listBoxC.SelectedIndexChanged += new System.EventHandler(this.listBoxC_SelectedIndexChanged);
+            // 
+            // listBoxCO
+            // 
+            this.listBoxCO.FormattingEnabled = true;
+            this.listBoxCO.Location = new System.Drawing.Point(25, 99);
+            this.listBoxCO.Name = "listBoxCO";
+            this.listBoxCO.Size = new System.Drawing.Size(1200, 82);
+            this.listBoxCO.TabIndex = 2;
+            this.listBoxCO.SelectedIndexChanged += new System.EventHandler(this.listBoxCO_SelectedIndexChanged);
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1174, 511);
-            this.Controls.Add(this.ImportClientes);
+            this.ClientSize = new System.Drawing.Size(1289, 488);
+            this.Controls.Add(this.listBoxCO);
+            this.Controls.Add(this.listBoxC);
+            this.Controls.Add(this.Impot_Client);
             this.Name = "Form1";
-            this.Text = "Form1";
-            this.Load += new System.EventHandler(this.Form1_Load);
+            this.Load += new System.EventHandler(this.Form1_Load_1);
             this.ResumeLayout(false);
 
         }
 
         #endregion
         private System.Windows.Forms.Button ImportClientes;
+        private System.Windows.Forms.ListBox ListboxClientes;
+        private System.Windows.Forms.Button Impot_Client;
+        private System.Windows.Forms.ListBox listBoxC;
+        private System.Windows.Forms.ListBox listBoxCO;
     }
 }
 

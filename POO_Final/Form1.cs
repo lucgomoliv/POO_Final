@@ -96,8 +96,8 @@ namespace POO_Final
                         {
                             if (vetorconta[2] == clientes[i].GetCpf())
                             {
-                                ISacavel categoria = new ContaPoupanca(Convert.ToInt32(vetorconta[4]));
-                                Conta c = new Conta(categoria, Convert.ToInt32(vetorconta[4]), Convert.ToInt32(vetorconta[0]));
+                                ISacavel categoria = new ContaPoupanca(Convert.ToDouble(vetorconta[3]));
+                                Conta c = new Conta(categoria, Convert.ToDouble(vetorconta[3]), Convert.ToInt32(vetorconta[0]));
                                 clientes[i].AddConta(c);
                                 Conta[] aux = new Conta[vetorc.Length + 1]; //Cria um vetor com mais uma posição referente ao vetor principal
                                 vetorc.CopyTo(aux, 0); //Copia os dados do vetor principal pro vetor auxiliar
@@ -113,8 +113,8 @@ namespace POO_Final
                         {
                             if (vetorconta[2] == clientes[i].GetCpf())
                             {
-                                ISacavel categoria = new ContaInvestimento(Convert.ToInt32(vetorconta[4]));
-                                Conta c = new Conta(categoria, Convert.ToInt32(vetorconta[4]), Convert.ToInt32(vetorconta[0]));
+                                ISacavel categoria = new ContaInvestimento(Convert.ToDouble(vetorconta[3]));
+                                Conta c = new Conta(categoria, Convert.ToDouble(vetorconta[3]), Convert.ToInt32(vetorconta[0]));
                                 clientes[i].AddConta(c);
                                 Conta[] aux = new Conta[vetorc.Length + 1]; //Cria um vetor com mais uma posição referente ao vetor principal
                                 vetorc.CopyTo(aux, 0); //Copia os dados do vetor principal pro vetor auxiliar
@@ -130,8 +130,8 @@ namespace POO_Final
                         {
                             if (vetorconta[2] == clientes[i].GetCpf())
                             {
-                                ISacavel categoria = new ContaCorrente(Convert.ToInt32(vetorconta[4]));
-                                Conta c = new Conta(categoria, Convert.ToInt32(vetorconta[4]), Convert.ToInt32(vetorconta[0]));
+                                ISacavel categoria = new ContaCorrente(Convert.ToDouble(vetorconta[3]));
+                                Conta c = new Conta(categoria, Convert.ToDouble(vetorconta[3]), Convert.ToInt32(vetorconta[0]));
                                 clientes[i].AddConta(c);
                                 Conta[] aux = new Conta[vetorc.Length + 1]; //Cria um vetor com mais uma posição referente ao vetor principal
                                 vetorc.CopyTo(aux, 0); //Copia os dados do vetor principal pro vetor auxiliar
@@ -200,14 +200,37 @@ namespace POO_Final
             }
         
         }
+        private void Form1_Load_1(object sender, EventArgs e)
+        {
 
-        private void ImportClientes_Click(object sender, EventArgs e)
+        }
+
+        private void Impot_Client_Click(object sender, EventArgs e)
         {
             Cliente[] vetorclientes;
-            vetorclientes=ImportarCliente();
+            vetorclientes = ImportarCliente();
             Conta[] vetorcontas;
             vetorcontas = ImportarConta(vetorclientes);
             ImportarOperacao(vetorcontas);
+            foreach (Cliente cliente in vetorclientes)
+            {
+                listBoxC.Items.Add(cliente.ToString());
+            }
+            foreach (Conta conta in vetorcontas)
+            {
+                listBoxCO.Items.Add(conta.ToString());
+            }
+
+        }
+
+        private void listBoxC_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void listBoxCO_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

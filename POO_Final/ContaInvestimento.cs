@@ -70,5 +70,14 @@ namespace POO_Final
             }
             return false;
         }
+
+        /// <summary>
+        /// Retorna os Dados da Conta como String
+        /// </summary>
+        /// <returns>Dados da Conta</returns>
+        public override string ToString()
+        {
+            return " Rendimento: " + rendimento.ToString() + " Tipo: Conta Investimento" + " Tarifa: " + tarifa.ToString() ;
+        }
     }
 }

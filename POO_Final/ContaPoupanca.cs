@@ -59,5 +59,14 @@ namespace POO_Final
             }
             else return 0;
         }
+
+        /// <summary>
+        /// Retorna os Dados da Conta como String
+        /// </summary>
+        /// <returns>Dados da Conta</returns>
+        public override string ToString()
+        {
+            return " Rendimento: " + rendimento.ToString() + " Tipo: Conta Poupança";
+        }
     }
 }

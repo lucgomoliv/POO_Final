@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ConsoleApp2
+namespace POO_Final
 {
     class Conta
     {
@@ -14,8 +14,23 @@ namespace ConsoleApp2
         private Operacao[] operacoes;
         private double saldo = 0;
         private ISacavel categoria;
-        
-        
+
+        public ISacavel GetCategoria()
+        {
+            return categoria;
+        }
+
+        public double GetSaldo()
+        {
+            return saldo;
+        }
+
+        public void SetSaldo(double saldo)
+        {
+            this.saldo = saldo;
+        }
+
+
         //Construtor 1
         public Conta(int categoria, double saldo, int numero)
         {
@@ -35,6 +50,7 @@ namespace ConsoleApp2
                 saldo = 0;
             }
         }
+
         //Construtor 2 
         public Conta(int categoria, double saldo)
         {
@@ -138,14 +154,9 @@ namespace ConsoleApp2
 
         public bool saque(double valor)
         {
-            if(categoria.sacar(valor))
-            {
-                Operacao aux = new Saque(valor, DateTime.UtcNow);
-                AddOperacao(aux);
-                aux.atualizar(this);
-                return true;
-            }
-            return false;
+            Operacao aux = new Saque(valor, DateTime.UtcNow);
+            AddOperacao(aux);
+            aux.atualizar(this);
         }
         public bool deposito(double valor)
         {
@@ -172,35 +183,15 @@ namespace ConsoleApp2
                 return saldo;
             }
         }
-
+        
         public double tarifa()
         {
-
+           
         }
 
         public int GetNumero()
         {
             return numero;
-        }
-        
-        public bool SetSaldoSaque(double valor)
-        {
-            if(valor>0)
-            {
-                saldo -= valor;
-                return true;
-            }
-            return false;
-        }
-
-        public bool SetSaldoDeposito(double valor)
-        {
-            if (valor > 0)
-            {
-                saldo += valor;
-                return true;
-            }
-            return false;
         }
     }
 }

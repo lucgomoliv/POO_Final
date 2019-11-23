@@ -4,13 +4,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ConsoleApp2
+namespace POO_Final
 {
     class Regular : Cliente
     {
         private double desconto = 3;
         //Construtor 1
         public Regular(string nome, string cpf, Conta[] conta) : base(nome, cpf, conta) { }
+
+        public Regular(string nome, string cpf) : base(nome, cpf) { }
 
         //Construtor 2
         public Regular(string nome, string cpf, Conta conta) : base(nome, cpf, conta) { }

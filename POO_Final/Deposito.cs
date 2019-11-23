@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ConsoleApp2
+namespace POO_Final
 {
     class Deposito : Operacao
     {
@@ -12,11 +12,9 @@ namespace ConsoleApp2
 
         public override bool atualizar(Conta conta)
         {
-            if(conta.SetSaldoDeposito(valor))
-            {
-                return true;
-            }
-            return false;
+            bool aux = conta.GetCategoria().depositar(valor);
+            if (aux) conta.SetSaldo(conta.GetSaldo + valor);
+            return aux;
         }
     }
 }

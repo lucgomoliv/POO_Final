@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ConsoleApp2
+namespace POO_Final
 {
-    abstract class Cliente
+    public abstract class Cliente
     {
         public string nome;
         public string cpf;
@@ -29,6 +29,11 @@ namespace ConsoleApp2
             {
                 this.contas = contas;
             }
+        }
+        public Cliente(string nome, string cpf)
+        {
+            this.nome = nome;
+            this.cpf = cpf;
         }
 
         /// <summary>
@@ -54,7 +59,7 @@ namespace ConsoleApp2
         /// </summary>
         /// <param Conta="Conta"></param>
         /// <returns></returns>
-        private void AddConta(Conta conta)
+        public void AddConta(Conta conta)
         {
             Conta[] aux = new Conta[contas.Length + 1]; //Cria um vetor com mais uma posição referente ao vetor principal
             contas.CopyTo(aux, 0); //Copia os dados do vetor principal pro vetor auxiliar

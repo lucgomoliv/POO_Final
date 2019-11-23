@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ConsoleApp2
+namespace POO_Final
 {
-    abstract class Operacao
+    public abstract class Operacao
     {
         protected double valor;
         protected DateTime data;

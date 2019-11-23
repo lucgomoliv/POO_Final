@@ -4,17 +4,22 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ConsoleApp2
+namespace POO_Final
 {
     class Rendimento : Operacao
     {
         public override bool atualizar(Conta conta)
         {
-            if (data.Day == 1)
+            try
             {
-                conta();
+                IRentavel aux = (IRentavel)conta.GetCategoria();
+                conta.SetSaldo(aux.calcRendimento(saldo) + conta.GetSaldo);
+                return true;
             }
-            else return false;
+            catch(InvalidCastException e)
+            {
+                return false;
+            }
         }
     }
 }

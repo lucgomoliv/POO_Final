@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ConsoleApp2
+namespace POO_Final
 {
     class Premium : Cliente
     {
@@ -13,6 +13,8 @@ namespace ConsoleApp2
 
         //Construtor 1
         public Premium(string nome, string cpf, Conta[] conta) : base(nome, cpf, conta) { }
+
+        public Premium(string nome, string cpf) : base(nome, cpf) { }
 
         //Construtor 2
         public Premium(string nome, string cpf, Conta conta) : base(nome, cpf, conta) { }

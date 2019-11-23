@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ConsoleApp2
+namespace POO_Final
 {
     class Qualificado : Cliente
     {
@@ -14,6 +14,8 @@ namespace ConsoleApp2
 
         //Construtor 2
         public Qualificado(string nome, string cpf, Conta conta) : base(nome, cpf, conta) { }
+
+        public Qualificado(string nome, string cpf) : base(nome, cpf) { }
 
         /// <summary>
         /// Cáculo da Tarifa da conta com base no cliente 

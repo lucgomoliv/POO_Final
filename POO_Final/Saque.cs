@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ConsoleApp2
+namespace POO_Final
 {
     class Saque : Operacao
     {
@@ -13,8 +13,16 @@ namespace ConsoleApp2
 
         public override bool atualizar(Conta conta)
         {
-            if(conta.SetSaldoSaque(valor))
+            ISacavel auxCat = conta.GetCategoria();
+            try
             {
+                ITarifavel aux = (ITarifavel)auxCat;
+                if (aux.sacar(valor)) conta.SetSaldo(conta.GetSaldo + valor - aux.calcTarifa());
+                return true;
+            }
+            catch(InvalidCastException e)
+            {
+                if (aux.sacar(valor)) conta.SetSaldo(valor);
                 return true;
             }
             return false;

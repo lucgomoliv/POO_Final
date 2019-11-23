@@ -8,7 +8,7 @@ namespace POO_Final
 {
     public interface ISacavel
     {
-        bool sacar(double valor);
-        bool depositar(double valor);
+         bool sacar(double valor);
+         bool depositar(double valor);
     }
 }

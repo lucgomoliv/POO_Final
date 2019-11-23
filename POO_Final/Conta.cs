@@ -156,18 +156,11 @@ namespace POO_Final
         {
             Operacao aux = new Saque(valor, DateTime.UtcNow);
             AddOperacao(aux);
-            aux.atualizar(this);
+            return aux.atualizar(this);
         }
         public bool deposito(double valor)
         {
-            if (categoria.depositar(valor))
-            {
-                Operacao aux = new Deposito(valor, DateTime.UtcNow);
-                AddOperacao(aux);
-                aux.atualizar(this);
-                return true;
-            }
-            return false;
+            
         }
 
         public double rendimento()
@@ -186,7 +179,15 @@ namespace POO_Final
         
         public double tarifa()
         {
-           
+            try
+            {
+                ITarifavel aux = (ITarifavel)categoria;
+                return aux.calcTarifa(saldo);
+            }
+            catch(InvalidCastException e)
+            {
+                return 0;
+            }
         }
 
         public int GetNumero()

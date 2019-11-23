@@ -9,7 +9,7 @@ namespace POO_Final
     class ContaPoupanca:ISacavel,IRentavel    
     {
         private double saldo;
-        private static double rendimento=0.01;
+        private static double rendimento = 0.01;
 
         public ContaPoupanca(double saldo)
         {
@@ -23,29 +23,30 @@ namespace POO_Final
         /// <returns></returns>
         public bool sacar(double valor)
         {
-            if((saldo-valor)>0)
+            if(saldo - valor > 0 && valor > 0)
             {
                 saldo -= valor;
                 return true;
             }
             return false;
-           
         }
 
         public bool depositar(double valor)
         {
-
-            if(valor>0)
+            if(valor > 0)
             {
                 saldo += valor;
                 return true;
             }
             return false;
-            
         }
         public double calcRendimento(double valor)
         {
-            return rendimento;
+            if (valor > 0)
+            {
+                return valor * rendimento;
+            }
+            else return 0;
         }
     }
 }

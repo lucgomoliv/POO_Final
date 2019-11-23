@@ -13,19 +13,12 @@ namespace POO_Final
 
         public override bool atualizar(Conta conta)
         {
-            ISacavel auxCat = conta.GetCategoria();
-            try
+            if (conta.GetCategoria().sacar(valor))
             {
-                ITarifavel aux = (ITarifavel)auxCat;
-                if (aux.sacar(valor)) conta.SetSaldo(conta.GetSaldo + valor - aux.calcTarifa());
+                conta.SetSaldo(conta.GetSaldo() - valor - conta.tarifa());
                 return true;
             }
-            catch(InvalidCastException e)
-            {
-                if (aux.sacar(valor)) conta.SetSaldo(valor);
-                return true;
-            }
-            return false;
+            else return false;
         }
     }
 }

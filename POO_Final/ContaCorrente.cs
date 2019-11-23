@@ -6,10 +6,9 @@ using System.Threading.Tasks;
 
 namespace POO_Final
 {
-    class ContaCorrente:ISacavel,ITarifavel
+    class ContaCorrente : ISacavel, ITarifavel
     {
         private double saldo;
-        private double rendimento;
         private double limitesaque;
         private static double tarifa = 5;
 
@@ -18,21 +17,29 @@ namespace POO_Final
             this.saldo = saldo;
         }
         
-
         public double calcTarifa(double valor)
         {
-            return valor + tarifa;
+            return tarifa;
         }
 
         public bool depositar(double valor)
         {
-          
+            if (valor > 0)
+            {
+                saldo += valor;
+                return true;
+            }
+            else return false;
         }
 
         public bool sacar(double valor)
         {
-            saldo -= valor;
-            return true;
+            if (valor > 0)
+            {
+                saldo -= valor;
+                return true;
+            }
+            else return false;
         }
     }
 }

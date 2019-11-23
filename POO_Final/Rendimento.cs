@@ -8,12 +8,13 @@ namespace POO_Final
 {
     class Rendimento : Operacao
     {
+        public Rendimento(double valor, DateTime data) : base(valor, data) { }
         public override bool atualizar(Conta conta)
         {
             try
             {
                 IRentavel aux = (IRentavel)conta.GetCategoria();
-                conta.SetSaldo(aux.calcRendimento(saldo) + conta.GetSaldo);
+                conta.SetSaldo(aux.calcRendimento(conta.GetSaldo()) + conta.GetSaldo());
                 return true;
             }
             catch(InvalidCastException e)

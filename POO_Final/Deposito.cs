@@ -12,9 +12,12 @@ namespace POO_Final
 
         public override bool atualizar(Conta conta)
         {
-            bool aux = conta.GetCategoria().depositar(valor);
-            if (aux) conta.SetSaldo(conta.GetSaldo + valor);
-            return aux;
+            if (conta.GetCategoria().depositar(valor)) 
+            {
+                conta.SetSaldo(conta.GetSaldo() + valor);
+                return true;
+            }
+            else return false;
         }
     }
 }

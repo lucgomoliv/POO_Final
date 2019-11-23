@@ -13,9 +13,16 @@ namespace POO_Final
 {
     public partial class Form1 : Form
     {
+        StreamReader arquivo;
         public Form1()
         {
             InitializeComponent();
+        }
+
+        private void Button1_Click(object sender, EventArgs e)
+        {
+            Form1 novoForms = new Form1();
+            novoForms.Show();
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -26,11 +33,10 @@ namespace POO_Final
         public Cliente[] ImportarCliente()
         {
             
-            string diretoriocliente = @"C:\Users\Public\Desktop\POOClientes.txt";
+            string diretoriocliente = @"..\..\Dados\POOClientes.txt";
             string linha = null;
             string[] vetorcliente = new string[3];
-  
-            StreamReader arquivo = new StreamReader(diretoriocliente);
+            arquivo = new StreamReader(diretoriocliente);
             Cliente[] vetorc = new Cliente[0];
 
             if (File.Exists(diretoriocliente))
@@ -66,14 +72,15 @@ namespace POO_Final
 
                 }
             }
+            arquivo.Close();
             return vetorc;
         }
         public Conta[] ImportarConta(Cliente[]clientes)
         {
-            string diretorioconta = @"‪C:\Users\Public\Desktop\POOContas.txt";
+            string diretorioconta = @"..\..\Dados\POOContas.txt";
             string linha = null;
             string[] vetorconta = new string[4];
-            StreamReader arquivo = new StreamReader(diretorioconta);
+            arquivo = new StreamReader(diretorioconta);
             Conta[] vetorc = new Conta[0];
 
             //Verifica se o arquivo existe
@@ -136,17 +143,17 @@ namespace POO_Final
 
                 }
             }
+            arquivo.Close();
             return vetorc;
 
         }
         public void ImportarOperacao(Conta[]contas)
         {
-            string diretoriooperacao = @"C:\Users\Public\Desktop\POOoperacoes.txt";
+            string diretoriooperacao = @"..\..\Dados\POOoperacoes.txt";
             
             string linha = null;
             string[] vetoroperacoes = new string[4];
-            StreamReader arquivo = new StreamReader(diretoriooperacao);
-           
+            arquivo = new StreamReader(diretoriooperacao);
 
             if (File.Exists(diretoriooperacao))
             {

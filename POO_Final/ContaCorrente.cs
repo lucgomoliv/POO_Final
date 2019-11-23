@@ -12,16 +12,27 @@ namespace POO_Final
         private double limitesaque;
         private static double tarifa = 5;
 
+        //Construtor
         public ContaCorrente(double saldo)
         {
             this.saldo = saldo;
         }
         
+
+        /// <summary>
+        /// Retorna a tarifa da Conta
+        /// </summary>
+        /// <returns>tarifa</returns>
         public double calcTarifa(double valor)
         {
             return tarifa;
         }
 
+        /// <summary>
+        /// Executa um Depósito na Conta
+        /// </summary>
+        /// <param Valor do Depósito="valor"></param>
+        /// <returns>(true) = Depósito Concluido (false) = Valor do Depósito inválido</returns>
         public bool depositar(double valor)
         {
             if (valor > 0)
@@ -32,6 +43,11 @@ namespace POO_Final
             else return false;
         }
 
+        /// <summary>
+        /// Executa um Saque na Conta
+        /// </summary>
+        /// <param Valor do Saque="valor"></param>
+        /// <returns>(true) = Saque Concluido (false) = Valor do Saque inválido</returns>
         public bool sacar(double valor)
         {
             if (valor > 0)

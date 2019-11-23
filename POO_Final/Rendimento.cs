@@ -9,6 +9,12 @@ namespace POO_Final
     class Rendimento : Operacao
     {
         public Rendimento(double valor, DateTime data) : base(valor, data) { }
+
+        /// <summary>
+        /// Retorna o Rendimento da Conta 
+        /// </summary>
+        /// <param Conta que será calculado o Rendimento="conta"></param>
+        /// <returns>(true) = rendimento Calculado (false) = não possui rendimento ou saldo da conta inválido</returns>
         public override bool atualizar(Conta conta)
         {
             try
@@ -17,7 +23,7 @@ namespace POO_Final
                 conta.SetSaldo(aux.calcRendimento(conta.GetSaldo()) + conta.GetSaldo());
                 return true;
             }
-            catch(InvalidCastException e)
+            catch (InvalidCastException e)
             {
                 return false;
             }

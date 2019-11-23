@@ -12,9 +12,10 @@ namespace POO_Final
         //Construtor 1
         public Regular(string nome, string cpf, Conta[] conta) : base(nome, cpf, conta) { }
 
+        //Construtor 2
         public Regular(string nome, string cpf) : base(nome, cpf) { }
 
-        //Construtor 2
+        //Construtor 3
         public Regular(string nome, string cpf, Conta conta) : base(nome, cpf, conta) { }
         
         /// <summary>

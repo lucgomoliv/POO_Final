@@ -14,9 +14,10 @@ namespace POO_Final
         //Construtor 1
         public Premium(string nome, string cpf, Conta[] conta) : base(nome, cpf, conta) { }
 
+        //Construtor 2
         public Premium(string nome, string cpf) : base(nome, cpf) { }
 
-        //Construtor 2
+        //Construtor 3
         public Premium(string nome, string cpf, Conta conta) : base(nome, cpf, conta) { }
         
         /// <summary>

@@ -15,21 +15,38 @@ namespace POO_Final
         private double saldo = 0;
         private ISacavel categoria;
 
+        /// <summary>
+        /// Retorna o Número da Conta
+        /// </summary>
+        /// <returns>Número da Conta</returns>
         public int GetNumero()
         {
             return numero;
         }
 
+        /// <summary>
+        /// Retorna a Categoria da Conta
+        /// </summary>
+        /// <returns>Categoria da Conta</returns>
         public ISacavel GetCategoria()
         {
             return categoria;
         }
 
+        /// <summary>
+        /// Retorna o Saldo da Conta
+        /// </summary>
+        /// <returns>Saldo da Conta</returns>
         public double GetSaldo()
         {
             return saldo;
         }
 
+        /// <summary>
+        /// Insere o Saldo da Conta
+        /// </summary>
+        /// <param Saldo da Conta="saldo"></param>
+        /// <returns></returns>
         public void SetSaldo(double saldo)
         {
             this.saldo = saldo;
@@ -171,8 +188,13 @@ namespace POO_Final
                 extrato += item.GetOperacao() + " \n";
             }
             return extrato;
-        }  
+        }
 
+        /// <summary>
+        /// Executa um Saque na Conta
+        /// </summary>
+        /// <param Valor do Saque="valor"></param>
+        /// <returns>(true) = Saque Concluido (false) = Valor do Saque acima do Saldo da conta ou Valor do Saque inválido</returns>
         public bool saque(double valor)
         {
             Operacao aux = new Saque(valor, DateTime.UtcNow);
@@ -184,6 +206,11 @@ namespace POO_Final
             return false;
         }
 
+        /// <summary>
+        /// Executa um Depósito na Conta
+        /// </summary>
+        /// <param Valor do Depósito="valor"></param>
+        /// <returns>(true) = Depósito Concluido (false) = Valor do Depósito inválido</returns>
         public bool deposito(double valor)
         {
             Operacao aux = new Deposito(valor, DateTime.UtcNow);
@@ -195,6 +222,10 @@ namespace POO_Final
             return false;
         }
 
+        /// <summary>
+        /// Retorna o Rendimento da Conta 
+        /// </summary>
+        /// <returns>(valor>0) = rendimento (valor =-1) = não possui rendimento</returns>
         public double rendimento()
         {
             double saldoAnterior = saldo;
@@ -202,7 +233,11 @@ namespace POO_Final
             if (aux.atualizar(this)) AddOperacao(aux);
             return saldo - saldoAnterior;
         }
-        
+
+        /// <summary>
+        /// Calcula a Tarifa da Conta 
+        /// </summary>
+        /// <returns>(valor>0) = tarifa (valor =-1) = não possui tarifa</returns>
         public double tarifa()
         {
             try

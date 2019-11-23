@@ -86,6 +86,11 @@ namespace POO_Final
             }
             return -1;
         }
+
+        /// <summary>
+        /// Retorna o CPF do Cliente
+        /// </summary>
+        /// <returns>cpf do cliente</returns>
         public string GetCpf()
         {
             return cpf;

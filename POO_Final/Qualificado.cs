@@ -15,6 +15,7 @@ namespace POO_Final
         //Construtor 2
         public Qualificado(string nome, string cpf, Conta conta) : base(nome, cpf, conta) { }
 
+        //Construtor 3
         public Qualificado(string nome, string cpf) : base(nome, cpf) { }
 
         /// <summary>

@@ -1,4 +1,4 @@
-﻿ using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,9 +10,14 @@ namespace POO_Final
     {
         public Deposito(double valor, DateTime d) : base(valor, d) { }
 
+        /// <summary>
+        /// Executa um Depósito na Conta
+        /// </summary>
+        /// <param Conta que será feito o Depoósito="conta"></param>
+        /// <returns>(true) = Depósito Concluido (false) = Valor do Depósito inválido</returns>
         public override bool atualizar(Conta conta)
         {
-            if (conta.GetCategoria().depositar(valor)) 
+            if (conta.GetCategoria().depositar(valor))
             {
                 conta.SetSaldo(conta.GetSaldo() + valor);
                 return true;

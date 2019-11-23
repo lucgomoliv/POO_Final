@@ -27,6 +27,10 @@ namespace POO_Final
 
         public abstract bool atualizar(Conta conta);
 
+        /// <summary>
+        /// Retorna o Valor e Data da Operação
+        /// </summary>
+        /// <returns>Valor e Data da Operação</returns>
         public string GetOperacao()
         {
             StringBuilder aux = new StringBuilder();
@@ -35,6 +39,10 @@ namespace POO_Final
             return aux.ToString();
         }
 
+        /// <summary>
+        /// Retorna o Valor da Opreação
+        /// </summary>
+        /// <returns>Valor da Operação</returns>
         public double GetValor()
         {
             return valor;

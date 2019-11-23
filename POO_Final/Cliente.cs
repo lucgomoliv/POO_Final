@@ -20,6 +20,7 @@ namespace ConsoleApp2
             this.cpf = cpf;
             AddConta(conta);
         }
+
         //Construtor 2 
         public Cliente(string nome, string cpf, Conta[] contas)
         {
@@ -30,6 +31,7 @@ namespace ConsoleApp2
                 this.contas = contas;
             }
         }
+
         /// <summary>
         /// Extrato da conta especificada
         /// </summary>

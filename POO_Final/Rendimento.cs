@@ -16,7 +16,5 @@ namespace ConsoleApp2
             }
             else return false;
         }
-     
-
     }
 }

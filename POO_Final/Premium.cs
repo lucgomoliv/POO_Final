@@ -10,16 +10,13 @@ namespace ConsoleApp2
     {
         //Todas as contas tem o mesmo desconto
         private static double desconto=10;
-        //Construtor 1
-        public Premium(string nome, string cpf, Conta[] conta) : base(nome, cpf, conta)
-        {
 
-        }
+        //Construtor 1
+        public Premium(string nome, string cpf, Conta[] conta) : base(nome, cpf, conta) { }
+
         //Construtor 2
-        public Premium(string nome, string cpf, Conta conta) : base(nome, cpf, conta)
-        {
-           
-        }
+        public Premium(string nome, string cpf, Conta conta) : base(nome, cpf, conta) { }
+        
         /// <summary>
         /// Cáculo da Tarifa da conta com base no cliente 
         /// </summary>

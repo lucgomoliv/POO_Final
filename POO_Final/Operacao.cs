@@ -39,7 +39,5 @@ namespace ConsoleApp2
         {
             return valor;
         }
-        
-
     }
 }

@@ -8,7 +8,6 @@ namespace ConsoleApp2
 {
     class Conta
     {
-
         private static int[] numerodascontasBD;
         private static int proximaconta = 0;
         private int numero;
@@ -34,8 +33,6 @@ namespace ConsoleApp2
             {
                 saldo = 0;
             }
-
-
         }
         //Construtor 2 
         public Conta(int categoria, double saldo)
@@ -70,6 +67,7 @@ namespace ConsoleApp2
             aux[aux.Length - 1] = operacao; //O vetor auxiliar recebe a nova operacao no ultimo índice
             operacoes = aux; //O vetor principal recebe o vetor auxiliar
         }
+
         /// <summary>
         /// Adiciona um numero de conta para o vetor de numeros de conta
         /// </summary>
@@ -96,6 +94,7 @@ namespace ConsoleApp2
             return true;
             
         }
+
         /// <summary>
         /// Implementação de categorias
         /// </summary>
@@ -121,6 +120,7 @@ namespace ConsoleApp2
             }
 
         }
+
         /// <summary>
         /// Retorna o extrato
         /// </summary>
@@ -134,6 +134,7 @@ namespace ConsoleApp2
             }
             return extrato;
         }  
+
         public bool saque(double valor)
         {
             if(categoria.sacar(valor))
@@ -144,7 +145,6 @@ namespace ConsoleApp2
                 return true;
             }
             return false;
-
         }
         public bool deposito(double valor)
         {
@@ -157,14 +157,17 @@ namespace ConsoleApp2
             }
             return false;
         }
+
         public double rendimento()
         {
             
         }
+
         public double tarifa()
         {
 
         }
+
         public int GetNumero()
         {
             return numero;

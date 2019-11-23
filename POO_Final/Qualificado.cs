@@ -10,15 +10,11 @@ namespace ConsoleApp2
     {
         private static double desconto = 5;
         //Construtor 1
-        public Qualificado(string nome, string cpf, Conta[] conta) : base(nome, cpf, conta)
-        {
-           
-        }
-        //Construtor 2
-        public Qualificado(string nome, string cpf, Conta conta) : base(nome, cpf, conta)
-        {
+        public Qualificado(string nome, string cpf, Conta[] conta) : base(nome, cpf, conta) { }
 
-        }
+        //Construtor 2
+        public Qualificado(string nome, string cpf, Conta conta) : base(nome, cpf, conta) { }
+
         /// <summary>
         /// Cáculo da Tarifa da conta com base no cliente 
         /// </summary>

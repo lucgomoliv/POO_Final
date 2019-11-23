@@ -15,7 +15,6 @@ namespace ConsoleApp2
         {
             this.saldo = saldo;
         }
-
        
         /// <summary>
         /// 
@@ -48,8 +47,5 @@ namespace ConsoleApp2
         {
             return rendimento;
         }
-     
-
-
     }
 }

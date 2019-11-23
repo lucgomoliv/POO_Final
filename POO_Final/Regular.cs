@@ -10,15 +10,11 @@ namespace ConsoleApp2
     {
         private double desconto=3;
         //Construtor 1
-        public Regular(string nome, string cpf, Conta[] conta) : base(nome, cpf, conta)
-        {
+        public Regular(string nome, string cpf, Conta[] conta) : base(nome, cpf, conta) { }
 
-        }
         //Construtor 2
-        public Regular(string nome, string cpf, Conta conta) : base(nome, cpf, conta)
-        {
-
-        }
+        public Regular(string nome, string cpf, Conta conta) : base(nome, cpf, conta) { }
+        
         /// <summary>
         /// Cáculo da Tarifa da conta com base no cliente 
         /// </summary>

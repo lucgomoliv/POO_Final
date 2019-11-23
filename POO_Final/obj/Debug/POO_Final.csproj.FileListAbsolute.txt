@@ -2,9 +2,13 @@ C:\Users\luqui\Google Drive\Projetos\POO_Final\POO_Final\obj\Debug\POO_Final.csp
 C:\Users\luqui\Google Drive\Projetos\POO_Final\POO_Final\obj\Debug\POO_Final.Form1.resources
 C:\Users\luqui\Google Drive\Projetos\POO_Final\POO_Final\obj\Debug\POO_Final.Properties.Resources.resources
 C:\Users\luqui\Google Drive\Projetos\POO_Final\POO_Final\obj\Debug\POO_Final.csproj.GenerateResource.cache
-C:\Users\luqui\Google Drive\Projetos\POO_Final\POO_Final\obj\Debug\POO_Final.csproj.CoreCompileInputs.cache
 C:\Users\User\Source\Repos\POO_Final\POO_Final\obj\Debug\POO_Final.csprojAssemblyReference.cache
 C:\Users\User\Source\Repos\POO_Final\POO_Final\obj\Debug\POO_Final.Form1.resources
 C:\Users\User\Source\Repos\POO_Final\POO_Final\obj\Debug\POO_Final.Properties.Resources.resources
 C:\Users\User\Source\Repos\POO_Final\POO_Final\obj\Debug\POO_Final.csproj.GenerateResource.cache
 C:\Users\User\Source\Repos\POO_Final\POO_Final\obj\Debug\POO_Final.csproj.CoreCompileInputs.cache
+C:\Users\luqui\Google Drive\Projetos\POO_Final\POO_Final\bin\Debug\POO_Final.exe.config
+C:\Users\luqui\Google Drive\Projetos\POO_Final\POO_Final\bin\Debug\POO_Final.exe
+C:\Users\luqui\Google Drive\Projetos\POO_Final\POO_Final\bin\Debug\POO_Final.pdb
+C:\Users\luqui\Google Drive\Projetos\POO_Final\POO_Final\obj\Debug\POO_Final.exe
+C:\Users\luqui\Google Drive\Projetos\POO_Final\POO_Final\obj\Debug\POO_Final.pdb

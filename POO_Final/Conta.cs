@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace POO_Final
 {
-    class Conta
+    public class Conta
     {
         private static int[] numerodascontasBD;
         private static int proximaconta = 0;

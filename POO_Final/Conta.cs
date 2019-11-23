@@ -15,6 +15,25 @@ namespace POO_Final
         private double saldo = 0;
         private ISacavel categoria;
 
+        public int GetNumero()
+        {
+            return numero;
+        }
+
+        public ISacavel GetCategoria()
+        {
+            return categoria;
+        }
+
+        public double GetSaldo()
+        {
+            return saldo;
+        }
+
+        public void SetSaldo(double saldo)
+        {
+            this.saldo = saldo;
+        }
 
         //Construtor 1
         public Conta(int categoria, double saldo, int numero)
@@ -75,20 +94,7 @@ namespace POO_Final
                 saldo = 0;
             }
         }
-        public ISacavel GetCategoria()
-        {
-            return categoria;
-        }
-
-        public double GetSaldo()
-        {
-            return saldo;
-        }
-
-        public void SetSaldo(double saldo)
-        {
-            this.saldo = saldo;
-        }
+        
         /// <summary>
         /// Adiciona uma operacao para o vetor de operacoes da conta
         /// </summary>
@@ -110,9 +116,9 @@ namespace POO_Final
         private bool AddConta(int numConta)
         {
             //Validação se houver conta repitida
-            foreach (int i in numerodascontasBD)
+            foreach(int i in numerodascontasBD)
             {
-                if (i == numConta)
+                if(i==numConta)
                 {
                     return false;
                 }
@@ -122,11 +128,10 @@ namespace POO_Final
                     numerodascontasBD.CopyTo(aux, 0); //Copia os dados do vetor principal pro vetor auxiliar
                     aux[aux.Length - 1] = numConta; //O vetor auxiliar recebe o novo numero no ultimo índice
                     numerodascontasBD = aux; //O vetor principal recebe o vetor auxiliar
-
+                    
                 }
             }
             return true;
-
         }
 
         /// <summary>
@@ -152,7 +157,6 @@ namespace POO_Final
                     this.categoria = new ContaPoupanca(saldo);
                     break;
             }
-
         }
 
         /// <summary>
@@ -167,33 +171,38 @@ namespace POO_Final
                 extrato += item.GetOperacao() + " \n";
             }
             return extrato;
-        }
+        }  
 
         public bool saque(double valor)
         {
             Operacao aux = new Saque(valor, DateTime.UtcNow);
-            AddOperacao(aux);
-            return aux.atualizar(this);
+            if (aux.atualizar(this))
+            {
+                AddOperacao(aux);
+                return true;
+            }
+            return false;
         }
+
         public bool deposito(double valor)
         {
-
+            Operacao aux = new Deposito(valor, DateTime.UtcNow);
+            if (aux.atualizar(this))
+            {
+                AddOperacao(aux);
+                return true;
+            }
+            return false;
         }
 
         public double rendimento()
         {
-            try
-            {
-                IRentavel aux = (IRentavel)categoria;
-                saldo = aux.calcRendimento(saldo);
-                return saldo;
-            }
-            catch (InvalidCastException e)
-            {
-                return saldo;
-            }
+            double saldoAnterior = saldo;
+            Operacao aux = new Rendimento(0, DateTime.UtcNow);
+            if (aux.atualizar(this)) AddOperacao(aux);
+            return saldo - saldoAnterior;
         }
-
+        
         public double tarifa()
         {
             try
@@ -201,16 +210,10 @@ namespace POO_Final
                 ITarifavel aux = (ITarifavel)categoria;
                 return aux.calcTarifa(saldo);
             }
-            catch (InvalidCastException e)
+            catch(InvalidCastException e)
             {
                 return 0;
             }
         }
-
-        public int GetNumero()
-        {
-            return numero;
-        }
-        
     }
 }

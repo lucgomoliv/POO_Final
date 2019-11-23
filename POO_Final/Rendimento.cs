@@ -8,6 +8,10 @@ namespace POO_Final
 {
     class Rendimento : Operacao
     {
+      
+        public Rendimento(double valor,DateTime data):base(valor,data)
+        {
+        }
         public override bool atualizar(Conta conta)
         {
             try

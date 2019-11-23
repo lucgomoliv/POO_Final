@@ -8,11 +8,8 @@ namespace ConsoleApp2
 {
     class Saque : Operacao
     {
-
-        public Saque(double valor, DateTime d):base(valor,d)
-        {
-
-        }
+        //Construtor 
+        public Saque(double valor, DateTime data) : base(valor, data) { }
 
         public override bool atualizar(Conta conta)
         {

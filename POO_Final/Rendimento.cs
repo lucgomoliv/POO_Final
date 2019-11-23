@@ -10,7 +10,11 @@ namespace ConsoleApp2
     {
         public override bool atualizar(Conta conta)
         {
-            DateTime.UtcNow
+            if (data.Day == 1)
+            {
+                conta.rendimento();
+            }
+            else return false;
         }
      
 

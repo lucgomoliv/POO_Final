@@ -8,18 +8,47 @@ namespace ConsoleApp2
 {
     class ContaPoupanca:ISacavel,IRentavel    
     {
-       public bool sacar(double valor)
-       {
+        private double saldo;
+        private static double rendimento=0.01;
 
-       }
-       public bool depositar(double valor)
-       {
+        public ContaPoupanca(double saldo)
+        {
+            this.saldo = saldo;
+        }
 
-       }
-       public double calcRendimento(double valor)
-       {
+       
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="valor"></param>
+        /// <returns></returns>
+        public bool sacar(double valor)
+        {
+            if((saldo-valor)>0)
+            {
+                saldo -= valor;
+                return true;
+            }
+            return false;
+           
+        }
 
-       }
+        public bool depositar(double valor)
+        {
+
+            if(valor>0)
+            {
+                saldo += valor;
+                return true;
+            }
+            return false;
+            
+        }
+        public double calcRendimento(double valor)
+        {
+            return rendimento;
+        }
+     
 
 
     }

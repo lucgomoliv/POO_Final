@@ -8,6 +8,13 @@ namespace ConsoleApp2
 {
     class ContaInvestimento : ISacavel, IRentavel, ITarifavel
     {
+        private double saldo;
+
+        public ContaInvestimento(double saldo)
+        {
+            this.saldo = saldo;
+        }
+
         public double calcRendimento(double valor)
         {
             

@@ -110,9 +110,9 @@ namespace POO_Final
         private bool AddConta(int numConta)
         {
             //Validação se houver conta repitida
-            foreach(int i in numerodascontasBD)
+            foreach (int i in numerodascontasBD)
             {
-                if(i==numConta)
+                if (i == numConta)
                 {
                     return false;
                 }
@@ -122,11 +122,11 @@ namespace POO_Final
                     numerodascontasBD.CopyTo(aux, 0); //Copia os dados do vetor principal pro vetor auxiliar
                     aux[aux.Length - 1] = numConta; //O vetor auxiliar recebe o novo numero no ultimo índice
                     numerodascontasBD = aux; //O vetor principal recebe o vetor auxiliar
-                    
+
                 }
             }
             return true;
-            
+
         }
 
         /// <summary>
@@ -167,7 +167,7 @@ namespace POO_Final
                 extrato += item.GetOperacao() + " \n";
             }
             return extrato;
-        }  
+        }
 
         public bool saque(double valor)
         {
@@ -177,7 +177,7 @@ namespace POO_Final
         }
         public bool deposito(double valor)
         {
-            
+
         }
 
         public double rendimento()
@@ -193,7 +193,7 @@ namespace POO_Final
                 return saldo;
             }
         }
-        
+
         public double tarifa()
         {
             try
@@ -201,7 +201,7 @@ namespace POO_Final
                 ITarifavel aux = (ITarifavel)categoria;
                 return aux.calcTarifa(saldo);
             }
-            catch(InvalidCastException e)
+            catch (InvalidCastException e)
             {
                 return 0;
             }
@@ -211,6 +211,6 @@ namespace POO_Final
         {
             return numero;
         }
-        public 
+        
     }
 }

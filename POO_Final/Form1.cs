@@ -92,7 +92,7 @@ namespace POO_Final
                        
                         for (int i = 0; i < clientes.Length; i++)
                         {
-                            if (vetorconta[3] == clientes[i].GetCpf())
+                            if (vetorconta[2] == clientes[i].GetCpf())
                             {
                                 ISacavel categoria = new ContaPoupanca(Convert.ToInt32(vetorconta[4]));
                                 Conta c = new Conta(categoria, Convert.ToInt32(vetorconta[4]), Convert.ToInt32(vetorconta[0]));
@@ -109,7 +109,7 @@ namespace POO_Final
 
                         for (int i = 0; i < clientes.Length; i++)
                         {
-                            if (vetorconta[3] == clientes[i].GetCpf())
+                            if (vetorconta[2] == clientes[i].GetCpf())
                             {
                                 ISacavel categoria = new ContaInvestimento(Convert.ToInt32(vetorconta[4]));
                                 Conta c = new Conta(categoria, Convert.ToInt32(vetorconta[4]), Convert.ToInt32(vetorconta[0]));
@@ -126,7 +126,7 @@ namespace POO_Final
 
                         for (int i = 0; i < clientes.Length; i++)
                         {
-                            if (vetorconta[3] == clientes[i].GetCpf())
+                            if (vetorconta[2] == clientes[i].GetCpf())
                             {
                                 ISacavel categoria = new ContaCorrente(Convert.ToInt32(vetorconta[4]));
                                 Conta c = new Conta(categoria, Convert.ToInt32(vetorconta[4]), Convert.ToInt32(vetorconta[0]));

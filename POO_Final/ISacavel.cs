@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace POO_Final
 {
-    interface ISacavel
+    public interface ISacavel
     {
-        bool sacar(double valor);
-        bool depositar(double valor);
+         bool sacar(double valor);
+         bool depositar(double valor);
     }
 }

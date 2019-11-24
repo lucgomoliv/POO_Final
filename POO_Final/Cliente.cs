@@ -103,5 +103,11 @@ namespace POO_Final
             aux.AppendLine("Nome: " + nome + " CPF: " + cpf + " Número de contas: " + contas.Length.ToString());
             return aux.ToString();
         }
+
+        public Conta[] GetContas()
+        {
+            return contas;
+        }
+        public abstract double GetDesconto();
     }
 }

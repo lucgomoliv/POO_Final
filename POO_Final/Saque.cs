@@ -8,8 +8,14 @@ namespace POO_Final
 {
     class Saque : Operacao
     {
+
+        string descricao;
         //Construtor 
-        public Saque(double valor, DateTime data) : base(valor, data) { }
+        public Saque(double valor, DateTime data) : base(valor, data) {
+
+            descricao = "S";
+
+        }
 
         /// <summary>
         /// Executa um Saque na Conta
@@ -24,6 +30,15 @@ namespace POO_Final
                 return true;
             }
             else return false;
+        }
+
+        public override string GetOperacao()
+        {
+            StringBuilder aux = new StringBuilder();
+
+            aux.AppendLine("|Saque| - Valor: -" + valor + " Data: " + data.ToString());
+            return aux.ToString();
+
         }
     }
 }

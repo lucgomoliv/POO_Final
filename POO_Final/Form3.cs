@@ -27,10 +27,11 @@ namespace POO_Final
 
         private void buttonAdicionar_Click(object sender, EventArgs e)
         {
-            maskedTextBoxSaldo.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
+
             if (!AddConta(textBoxCPF.Text, comboBoxTipo.Text, maskedTextBoxSaldo.Text))
                 MessageBox.Show("Não foi possível adicionar o cliente! Por favor verifique os dados inseridos");
-            maskedTextBoxSaldo.TextMaskFormat = MaskFormat.IncludePromptAndLiterals;
+            else MessageBox.Show("Conta Adiconada com sucesso!");
+          
         }
 
         public bool AddConta(string cpf, string categoria, string saldoInicial)
@@ -61,6 +62,9 @@ namespace POO_Final
                             form.vetorclientes[i].AddConta(conta);
                             form.vetorcontas = aux;
                             form.AtualizarLista();
+                            textBoxCPF.Clear();
+                            maskedTextBoxSaldo.Clear();
+                            comboBoxTipo.SelectedIndex = -1;
                             return true;
                         }
                     }
@@ -76,6 +80,16 @@ namespace POO_Final
             {
                 return false;
             }
+        }
+
+        private void Form3_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBoxTipo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

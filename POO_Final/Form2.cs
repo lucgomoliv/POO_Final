@@ -27,8 +27,9 @@ namespace POO_Final
 
         private void button2_Click(object sender, EventArgs e)
         {
-            if (!AddCliente(textBoxNome.Text, textBoxCPF.Text, comboBoxTipo.Text)) 
+            if (!AddCliente(textBoxNome.Text, textBoxCPF.Text, comboBoxTipo.Text))
                 MessageBox.Show("Não foi possível adicionar o cliente! Por favor verifique os dados inseridos");
+            else MessageBox.Show("Cliente adicionado com sucesso!");
         }
 
         private bool AddCliente(string nome, string cpf, string categoria)
@@ -81,6 +82,11 @@ namespace POO_Final
             textBoxNome.Text = "";
             textBoxCPF.Text = "";
             comboBoxTipo.SelectedIndex = -1;
+        }
+
+        private void Form2_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

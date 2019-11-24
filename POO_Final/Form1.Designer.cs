@@ -43,6 +43,7 @@
             this.textBoxNumConta = new System.Windows.Forms.TextBox();
             this.buttonAddCliente = new System.Windows.Forms.Button();
             this.buttonExtrato = new System.Windows.Forms.Button();
+            this.buttonCalcT = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // Impot_Client
@@ -183,9 +184,20 @@
             this.buttonExtrato.UseVisualStyleBackColor = true;
             this.buttonExtrato.Click += new System.EventHandler(this.buttonExtrato_Click);
             // 
+            // buttonCalcT
+            // 
+            this.buttonCalcT.Location = new System.Drawing.Point(195, 429);
+            this.buttonCalcT.Name = "buttonCalcT";
+            this.buttonCalcT.Size = new System.Drawing.Size(90, 37);
+            this.buttonCalcT.TabIndex = 25;
+            this.buttonCalcT.Text = "Calcular Tarifa";
+            this.buttonCalcT.UseVisualStyleBackColor = true;
+            this.buttonCalcT.Click += new System.EventHandler(this.buttonCalcT_Click);
+            // 
             // Form1
             // 
             this.ClientSize = new System.Drawing.Size(847, 488);
+            this.Controls.Add(this.buttonCalcT);
             this.Controls.Add(this.buttonExtrato);
             this.Controls.Add(this.buttonAddCliente);
             this.Controls.Add(this.textBoxNumConta);
@@ -226,6 +238,7 @@
         private System.Windows.Forms.TextBox textBoxNumConta;
         private System.Windows.Forms.Button buttonAddCliente;
         private System.Windows.Forms.Button buttonExtrato;
+        private System.Windows.Forms.Button buttonCalcT;
     }
 }
 

@@ -8,7 +8,11 @@ namespace POO_Final
 {
     class Rendimento : Operacao
     {
-        public Rendimento(double valor, DateTime data) : base(valor, data) { }
+        string descricao;
+        public Rendimento(double valor, DateTime data) : base(valor, data) {
+
+            descricao = "R";
+        }
 
         /// <summary>
         /// Retorna o Rendimento da Conta 
@@ -31,6 +35,14 @@ namespace POO_Final
             {
                 return false;
             }
+        }
+        public override string GetOperacao()
+        {
+            StringBuilder aux = new StringBuilder();
+
+            aux.AppendLine("|Rendimento| - Valor: +" + valor + " Data: " + data.ToString());
+            return aux.ToString();
+
         }
     }
 }

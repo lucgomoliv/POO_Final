@@ -103,11 +103,11 @@
             this.comboBoxTipo.Name = "comboBoxTipo";
             this.comboBoxTipo.Size = new System.Drawing.Size(90, 21);
             this.comboBoxTipo.TabIndex = 2;
+            this.comboBoxTipo.SelectedIndexChanged += new System.EventHandler(this.comboBoxTipo_SelectedIndexChanged);
             // 
             // maskedTextBoxSaldo
             // 
             this.maskedTextBoxSaldo.Location = new System.Drawing.Point(221, 195);
-            this.maskedTextBoxSaldo.Mask = "$0000,00";
             this.maskedTextBoxSaldo.Name = "maskedTextBoxSaldo";
             this.maskedTextBoxSaldo.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.maskedTextBoxSaldo.Size = new System.Drawing.Size(90, 20);
@@ -139,6 +139,7 @@
             this.Controls.Add(this.label10);
             this.Name = "Form3";
             this.Text = "Form3";
+            this.Load += new System.EventHandler(this.Form3_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

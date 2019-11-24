@@ -11,7 +11,7 @@ namespace POO_Final
         private static int[] numerodascontasBD = new int[0];
         private static int proximaconta = 0;
         private int numero;
-        private Operacao[] operacoes = new Operacao[1];
+        private Operacao[] operacoes = new Operacao[0];
         private double saldo = 0;
         private ISacavel categoria;
 
@@ -177,12 +177,16 @@ namespace POO_Final
         /// <returns></returns>
         public string extrato()
         {
-            string extrato = string.Empty;
-            foreach (var item in this.operacoes)
+            StringBuilder extrato = new StringBuilder();
+           
+            foreach (Operacao op in this.operacoes)
             {
-                extrato += item.GetOperacao() + " \n";
+                if(op!=null)
+                {
+                    extrato.AppendLine(op.GetOperacao());
+                }
             }
-            return extrato;
+            return extrato.ToString();
         }
 
         /// <summary>
@@ -257,6 +261,10 @@ namespace POO_Final
             aux.AppendLine(categoria.ToString());
             return aux.ToString();
        
+        }
+        public void SS(double valor)
+        {
+            this.saldo += valor;
         }
     }
 }

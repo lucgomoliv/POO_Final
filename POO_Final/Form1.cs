@@ -204,7 +204,7 @@ namespace POO_Final
         }
         private void Form1_Load_1(object sender, EventArgs e)
         {
-
+             
         }
 
         private void Impot_Client_Click(object sender, EventArgs e)
@@ -240,7 +240,7 @@ namespace POO_Final
                 {
                     if (vetorcontas[i].GetNumero() == int.Parse(textBoxNumConta.Text))
                     {
-                        textBoxValor.Text = vetorcontas[i].rendimento().ToString();
+                        
                         MessageBox.Show("A conta rendeu " + vetorcontas[i].rendimento());
                         AtualizarLista();
                         break;
@@ -294,6 +294,8 @@ namespace POO_Final
 
         private void buttonDep_Click(object sender, EventArgs e)
         {
+
+            bool aux = false;
             try
             {
                 double valor = double.Parse(textBoxValor.Text);
@@ -301,14 +303,30 @@ namespace POO_Final
                 {
                     if (vetorcontas[i].GetNumero() == int.Parse(textBoxNumConta.Text))
                     {
-                        textBoxValor.Text = vetorcontas[i].deposito(valor).ToString();
-                        MessageBox.Show("Foi depositado " + valor + " reais na conta de numero '" + vetorcontas[i].GetNumero());
-                        AtualizarLista();
-                        break;
+                        if (vetorcontas[i].deposito(valor))
+                        {
+                            MessageBox.Show("Foi Depositado '" + valor + "' reais da conta de numero '" + vetorcontas[i].GetNumero() + "'");
+                            AtualizarLista();
+                            aux = true;
+                            break;
+                        }
+                        else
+                        {
+                            aux = false;
+
+                        }
+
                     }
                 }
+                if (aux == false)
+                {
+                    MessageBox.Show("Não pode ser depositado o valor '" + valor + "' na conta '" + textBoxNumConta.Text + "'");
+
+                }
+
+
             }
-            catch(FormatException j)
+            catch (FormatException j)
             {
                 MessageBox.Show("Dados invalidos, por favor insira os dados novamente e repita a ação!");
             }
@@ -320,6 +338,7 @@ namespace POO_Final
 
         private void buttonSacar_Click(object sender, EventArgs e)
         {
+            bool aux=false;
             try
             {
                 double valor = double.Parse(textBoxValor.Text);
@@ -327,12 +346,29 @@ namespace POO_Final
                 {
                     if (vetorcontas[i].GetNumero() == int.Parse(textBoxNumConta.Text))
                     {
-                        textBoxValor.Text = vetorcontas[i].saque(valor).ToString();
-                        MessageBox.Show("Foi sacado " + valor + " reais da conta de numero '" + vetorcontas[i].GetNumero());
-                        AtualizarLista();
-                        break;
+                        if(vetorcontas[i].saque(valor))
+                        {
+                            
+                            MessageBox.Show("Foi sacado '" + valor + "' reais da conta de numero '" + vetorcontas[i].GetNumero()+"'");
+                            AtualizarLista();
+                            aux = true;
+                            break;
+                        }
+                        else
+                        {
+                            aux = false;
+                            
+                        }
+                        
                     }
                 }
+                if(aux==false)
+                {
+                    MessageBox.Show("Não pode ser sacado o valor '" + valor + "' na conta '" + textBoxNumConta.Text+"'");
+                   
+                }
+                
+                
             }
             catch (FormatException j)
             {
@@ -366,6 +402,58 @@ namespace POO_Final
             {
                 MessageBox.Show("Dados invalidos, por favor insira os dados novamente e repita a ação!");
             }
+        }
+
+        private void buttonCalcT_Click(object sender, EventArgs e)
+        {
+
+            bool aux2 = false;
+            try
+            {
+                double aux = 0;
+                double tarifa_final = 0;
+
+
+                for (int i = 0; i < vetorclientes.Length; i++)
+                {
+
+                    Conta[] contas = vetorclientes[i].GetContas();
+                    for (int j = 0; j < contas.Length; j++)
+                    {
+
+                        if (contas[j].GetNumero() == Convert.ToInt32(textBoxNumConta.Text))
+                        {
+                            aux = contas[j].tarifa();
+                            tarifa_final = aux - vetorclientes[i].GetDesconto();
+                            if(tarifa_final<0)
+                            {
+                                tarifa_final = 0;
+                            }
+                            aux2 = true;
+                            MessageBox.Show("Valor da Tarifa para essa conta/cliente: " + tarifa_final.ToString());
+                            break;
+                        }
+
+
+                    }
+
+                }
+                if(aux2 == false)
+                {
+                    MessageBox.Show("Conta não encontrada!");
+                }
+
+            }
+            catch (FormatException j)
+            {
+                MessageBox.Show("Dados invalidos, por favor insira os dados novamente e repita a ação!");
+            }
+            catch (NullReferenceException x)
+            {
+                MessageBox.Show("Dados invalidos, por favor insira os dados novamente e repita a ação!");
+            }
+
+
         }
     }
 }

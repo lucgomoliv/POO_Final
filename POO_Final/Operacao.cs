@@ -31,13 +31,8 @@ namespace POO_Final
         /// Retorna o Valor e Data da Operação
         /// </summary>
         /// <returns>Valor e Data da Operação</returns>
-        public string GetOperacao()
-        {
-            StringBuilder aux = new StringBuilder();
+        public abstract string GetOperacao();
 
-            aux.AppendLine("Valor: " + valor + " Data: " + data.ToString());
-            return aux.ToString();
-        }
 
         /// <summary>
         /// Retorna o Valor da Opreação

@@ -8,7 +8,7 @@ namespace POO_Final
 {
     class Regular : Cliente
     {
-        private double desconto = 3;
+        private double desconto = 1;
         //Construtor 1
         public Regular(string nome, string cpf, Conta[] conta) : base(nome, cpf, conta) { }
 
@@ -44,6 +44,10 @@ namespace POO_Final
                 }
             }
             return -1;
+        }
+        public override double GetDesconto()
+        {
+            return desconto;
         }
     }
 }

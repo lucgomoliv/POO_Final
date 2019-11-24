@@ -8,7 +8,10 @@ namespace POO_Final
 {
     class Deposito : Operacao
     {
-        public Deposito(double valor, DateTime d) : base(valor, d) { }
+        string descricao;
+        public Deposito(double valor, DateTime d) : base(valor, d) {
+            descricao = "D";
+        }
 
         /// <summary>
         /// Executa um Depósito na Conta
@@ -23,6 +26,15 @@ namespace POO_Final
                 return true;
             }
             else return false;
+        }
+
+        public override string GetOperacao()
+        {
+            StringBuilder aux = new StringBuilder();
+
+            aux.AppendLine("|Depósito| - Valor: +" + valor + " Data: " + data.ToString());
+            return aux.ToString();
+
         }
     }
 }

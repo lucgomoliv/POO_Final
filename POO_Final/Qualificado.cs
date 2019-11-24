@@ -8,7 +8,7 @@ namespace POO_Final
 {
     class Qualificado : Cliente
     {
-        private static double desconto = 5;
+        private static double desconto = 2;
         //Construtor 1
         public Qualificado(string nome, string cpf, Conta[] conta) : base(nome, cpf, conta) { }
 
@@ -44,6 +44,11 @@ namespace POO_Final
                 }
             }
             return -1;
+        }
+
+        public override double GetDesconto()
+        {
+            return desconto;
         }
 
     }
